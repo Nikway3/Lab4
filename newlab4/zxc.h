@@ -57,14 +57,19 @@ public:
     // Размер занимаемой памяти
     virtual int size()=0;
 };
-class Tmp_figure: public IGeoFig,
+/*class Tmp_figure: public IGeoFig,
                   public PhysObject,
                   public Printable,
                   public DialogInitiable,
-                  public BaseObject{};
+                  public BaseObject{};*/
 
 class Equilateral_Triangle:
-        Tmp_figure{
+        public IGeoFig,
+        public PhysObject,
+        public Printable,
+        public DialogInitiable,
+        public BaseObject
+        {
 private:
     Vector2D v1, v2, v3;
     double mass_in;
@@ -87,8 +92,12 @@ public:
 };
 
 class Ellipse:
-        Tmp_figure {
-
+        public IGeoFig,
+        public PhysObject,
+        public Printable,
+        public DialogInitiable,
+        public BaseObject
+        {
 private:
     double xCenter, yCenter;
     double a, b;
